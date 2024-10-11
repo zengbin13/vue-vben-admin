@@ -26,7 +26,7 @@ const userStore = useUserStore();
 const projectItems: WorkbenchProjectItem[] = [
   {
     color: '',
-    content: '不要等待机会，而要创造机会。',
+    content: '不要等待机会，而要创造机会1。',
     date: '2021-04-01',
     group: '开源组',
     icon: 'carbon:logo-github',
@@ -199,12 +199,8 @@ const trendItems: WorkbenchTrendItem[] = [
 
 <template>
   <div class="p-5">
-    <WorkbenchHeader
-      :avatar="userStore.userInfo?.avatar || preferences.app.defaultAvatar"
-    >
-      <template #title>
-        早安, {{ userStore.userInfo?.realName }}, 开始您一天的工作吧！
-      </template>
+    <WorkbenchHeader :avatar="userStore.userInfo?.avatar || preferences.app.defaultAvatar">
+      <template #title> 早安, {{ userStore.userInfo?.realName }}, 开始您一天的工作吧！ </template>
       <template #description> 今日晴，20℃ - 32℃！ </template>
     </WorkbenchHeader>
 
@@ -214,11 +210,7 @@ const trendItems: WorkbenchTrendItem[] = [
         <WorkbenchTrends :items="trendItems" class="mt-5" title="最新动态" />
       </div>
       <div class="w-full lg:w-2/5">
-        <WorkbenchQuickNav
-          :items="quickNavItems"
-          class="mt-5 lg:mt-0"
-          title="快捷导航"
-        />
+        <WorkbenchQuickNav :items="quickNavItems" class="mt-5 lg:mt-0" title="快捷导航" />
         <WorkbenchTodo :items="todoItems" class="mt-5" title="待办事项" />
         <AnalysisChartCard class="mt-5" title="访问来源">
           <AnalyticsVisitsSource />
